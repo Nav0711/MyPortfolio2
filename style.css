@@ -632,7 +632,7 @@ footer {
 @media (max-width: 576px) {
     .profile-container {
         width: auto;
-        height: auto;
+        height: auto;   
         .profile-container {
         width: 200px;
         height: 200px;
@@ -643,7 +643,7 @@ footer {
     }
     
     .hero-text h2 {
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
     
     .hero-text p {
