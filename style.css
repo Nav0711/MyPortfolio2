@@ -181,6 +181,24 @@ nav {
     transition: var(--transition);
 }
 
+.hamburger.active span {
+    background-color: transparent; /* Hide the original lines */
+  }
+  
+  .hamburger.active span:first-child {
+    transform: rotate(45deg) translate(5px, 5px); 
+    background-color: var(--gray-700); /* Rotate and translate the first line */
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0; /* Or display: none; to hide the middle line */
+  }
+  
+  .hamburger.active span:last-child {
+    transform: rotate(-45deg) translate(5px, -5px); 
+    background-color: var(--gray-700); /* Rotate and translate the last line */
+  }
+
 /* ----- Hero Section ----- */
 .hero {
     background-color: var(--gray-100);
@@ -596,20 +614,22 @@ footer {
 @media (max-width: 768px) {
     .nav-links {
         position: fixed;
+        font-size: 1.2rem;
         top: 70px;
-        left: -100%;
+        right: -100%;
         width: 100%;
         height: calc(100vh - 70px);
-        background-color: var(--white);
+        background-color: rgba(0, 0, 0, 0.80);
+        backdrop-filter: blur(10px);
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 20px;
-        transition: var(--transition);
+        transition: 0.2s ease;
     }
 
     .nav-links.active {
-        left: 0;
+        right: 0;
     }
 
     .hamburger {
@@ -644,19 +664,15 @@ footer {
 
 @media (max-width: 576px) {
     .profile-container {
-        width: 200px;
-        height: 200px;   
+        width: 180px;
+        height: 180px;   
         .profile-container {
         width: 200px;
         height: 200px;
     }
     
     .hero-text h1 {
-<<<<<<< HEAD
         font-size: 1.6rem;
-=======
-        font-size: 1.5rem;
->>>>>>> a6818808637e1f24a8d0b4311d17cbffd39403d1
     }
     
     .hero-text h2 {
