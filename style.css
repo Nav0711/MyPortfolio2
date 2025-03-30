@@ -626,7 +626,11 @@ footer {
     }
 
     .hero-text h1 {
-        font-size: 2rem;
+        font-size: 1.6rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 1.1rem
     }
 
     .section-title {
@@ -648,11 +652,15 @@ footer {
     }
     
     .hero-text h1 {
+<<<<<<< HEAD
         font-size: 1.6rem;
+=======
+        font-size: 1.5rem;
+>>>>>>> a6818808637e1f24a8d0b4311d17cbffd39403d1
     }
     
     .hero-text h2 {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
     
     .hero-text p {
