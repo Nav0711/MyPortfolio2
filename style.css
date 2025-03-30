@@ -631,7 +631,8 @@ footer {
 
 @media (max-width: 576px) {
     .profile-container {
-        width: max-content;
+        width: auto;
+        height: auto;
         .profile-container {
         width: 200px;
         height: 200px;
@@ -653,7 +654,6 @@ footer {
         padding: 10px 20px;
     }
     
-   
     .project-filter {
         gap: 10px;
     }
