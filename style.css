@@ -617,7 +617,11 @@ footer {
     }
 
     .hero-text h1 {
-        font-size: 2rem;
+        font-size: 1.6rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 1.1rem
     }
 
     .section-title {
@@ -631,19 +635,19 @@ footer {
 
 @media (max-width: 576px) {
     .profile-container {
-        width: auto;
-        height: auto;   
+        width: 200px;
+        height: 200px;   
         .profile-container {
         width: 200px;
         height: 200px;
     }
     
     .hero-text h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
     
     .hero-text h2 {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
     
     .hero-text p {
