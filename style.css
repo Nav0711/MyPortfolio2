@@ -27,11 +27,33 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
+
+/* @keyframes appear{
+    from{
+        opacity: 0;
+        scale: 0.8;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.container{
+    animation: appear 2s linear;    
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
+} */
+
+
 
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 70px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) rgba(0, 0, 0, 0);
 }
 
 body {
@@ -67,6 +89,7 @@ img {
 
 section {
     padding: 80px 0;
+    
 }
 
 /* ----- Buttons ----- */
@@ -120,6 +143,9 @@ header {
     width: 100%;
     z-index: 1000;
     height: 70px;
+    border: var(--gray-200);
+    border-width: 0px 0px 0.5px 0px;
+    border-style: solid;    
 }
 
 nav {
@@ -304,6 +330,22 @@ nav {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: var(--shadow);
+    height: 500px;
+
+    appear{
+        from{
+            opacity: 0;
+            scale: 0.7;
+            translate: translateX(-100px);
+        }
+        to{
+            opacity: 1;
+            scale: 1;
+            translate: translateX(0px);
+        }
+    }
+
+    
 }
 
 .about-text {
@@ -590,6 +632,11 @@ footer {
     padding: 25px 0;
 }
 
+.gitrep{
+    color: var(--gray-900);
+    font-weight: 600;
+}
+
 /* ----- Media Queries ----- */
 @media (max-width: 992px) {
     .hero-text h1 {
@@ -661,6 +708,10 @@ footer {
 
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+
+    .footer{
+        font-size: 0.7rem;
     }
 }
 
