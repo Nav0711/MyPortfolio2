@@ -58,9 +58,10 @@ html {
 
 .topbtn{
     position: fixed;
+    border: none;
     bottom: 20px;
     right: 20px;
-    /* background-color: var(--primary-color); */
+    background-color: var(--primary-color);
     /* color: var(--white); */
     border-radius: 50%;
     width: 50px;
@@ -69,14 +70,22 @@ html {
     align-items: center;
     font-size: 1.5rem;
     animation: appear 0.5s linear;
-    transition: var(--transition); 
+    transition: ease-in-out 0.3s; 
 
 }
 
 
-.topbtn.show{
-    display: block; /* Show when scrolled down */
+
+.topbtn :active{
+    background-color: white;
+    color: var(--primary-color);
+    transform: translateY(0px);
+    box-shadow: var(--shadow-dark);
 }
+
+
+
+
 
 
 body {

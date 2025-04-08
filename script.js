@@ -43,34 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     
-    // Form submission
-        // const contactForm = document.getElementById('contactForm');
-        
-        // if (contactForm) {
-        //     contactForm.addEventListener('submit', function(e) {
-        //         e.preventDefault();
-                
-        //         // Get form values
-        //         const name = document.getElementById('name').value;
-        //         const email = document.getElementById('email').value;
-        //         const subject = document.getElementById('subject').value;
-        //         const message = document.getElementById('message').value;
-                
-        //         // Basic form validation
-        //         if (!name || !email || !subject || !message) {
-        //             alert('Please fill in all fields');
-        //             return;
-        //         }
-                
-        //         // // In a real application, you would send the form data to a server here
-        //         // // For now, we'll just show a success message
-        //         // alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
-                
-        //         // // Reset form
-        //         // contactForm.reset();
-        //     });
-        // }
-    
     // Animation on scroll (simple version)
     const animateOnScroll = function() {
         const elements = document.querySelectorAll('.skill-level');
@@ -93,10 +65,21 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     };
+
     
     // Run animation on page load
     setTimeout(animateOnScroll, 500);
     
     // Run animation on scroll
     window.addEventListener('scroll', animateOnScroll);
+});
+
+const buttontop = document.getElementsByClassName('topbtn')[0];
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) { // Adjust the scroll threshold as needed
+    buttontop.style.display = 'block';
+  } else {
+    buttontop.style.display = 'none';
+  }
 });
