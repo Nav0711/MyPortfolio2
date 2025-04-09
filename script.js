@@ -77,11 +77,11 @@ document.addEventListener('DOMContentLoaded', function () {
 const buttontop = document.getElementById('topbtn');
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 400) {
-    buttontop.classList.add('show');
-  } else {
-    buttontop.classList.remove('show');
-  }
+    if (window.scrollY > 400) {
+        buttontop.classList.add('show');
+    } else {
+        buttontop.classList.remove('show');
+    }
 });
 
 
@@ -99,3 +99,22 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 elements.forEach(el => observer.observe(el));
+
+
+const aboutImage = document.querySelector('.about-image');
+const aboutText = document.querySelector('.about-text');
+
+const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('showAbout');
+        }
+    });
+}, {
+    threshold: 0.3  // Adjust how early it triggers
+});
+
+if (aboutImage||aboutText)  {
+    obs.observe(aboutImage);
+    obs.observe(aboutText);
+}

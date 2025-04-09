@@ -29,23 +29,6 @@
 
 }
 
-/* @keyframes appear{
-    from{
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-    to{
-        transform: translateX(0px);
-        opacity: 1;
-    }
-}
-
-.container {
-    animation: appear 2s ease-in;    
-    animation-timeline: view();
-    animation-range: entry 0 cover 30%;
-} */
-
 
 
 html {
@@ -56,7 +39,7 @@ html {
 }
 
 .topbtn {
-    opacity:0;
+    opacity: 0;
     pointer-events: none;
     position: fixed;
     bottom: 20px;
@@ -166,6 +149,29 @@ section {
     font-size: 0.9rem;
 }
 
+
+@keyframes fadeIn {
+    0% {
+        transform: translateY(-100px);
+        /* opacity: 0; */
+    }
+
+    100% {
+        transform: translateY(0);
+        /* opacity: 1; */
+    }
+}
+
+header {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.logo,
+.nav-links {
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+
 /* ----- Header & Navigation ----- */
 header {
     background-color: var(--white);
@@ -189,7 +195,7 @@ nav {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--primary-color);
 }
@@ -197,6 +203,7 @@ nav {
 .nav-links {
     display: flex;
     gap: 30px;
+    font-size: 1.1rem;
 }
 
 .nav-links a {
@@ -248,18 +255,65 @@ nav {
 .hamburger.active span:first-child {
     transform: rotate(45deg) translate(5px, 5px);
     background-color: var(--gray-700);
-    /* Rotate and translate the first line */
 }
 
 .hamburger.active span:nth-child(2) {
     opacity: 0;
-    /* Or display: none; to hide the middle line */
+
 }
 
 .hamburger.active span:last-child {
     transform: rotate(-45deg) translate(5px, -5px);
     background-color: var(--gray-700);
-    /* Rotate and translate the last line */
+
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+        scale: 0.9;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        scale: 1;
+    }
+}
+
+.profile-container {
+    animation: appear 1s ease-out forwards;
+}
+
+@keyframes appear2 {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+        scale: 0.9;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        scale: 1;
+    }
+}
+
+.hero-text h1 {
+    animation: appear2 0.5s ease-out forwards;
+}
+
+.hero-text h2 {
+    animation: appear2 1s ease-out forwards;
+}
+
+.hero-text p {
+    animation: appear2 1.5s ease-out forwards;
+}
+
+.hero-text .cta-buttons {
+    animation: appear2 1.8s ease-out forwards;
 }
 
 /* ----- Hero Section ----- */
@@ -267,6 +321,7 @@ nav {
     background-color: var(--gray-100);
     padding-top: 150px;
     padding-bottom: 80px;
+    height: 40em;
 }
 
 .hero-content {
@@ -281,20 +336,20 @@ nav {
 }
 
 .hero-text h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     line-height: 1.2;
     margin-bottom: 15px;
     color: var(--gray-900);
 }
 
 .hero-text h2 {
-    font-size: 1.8rem;
+    font-size: 2.3rem;
     color: var(--gray-600);
     margin-bottom: 20px;
 }
 
 .hero-text p {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
     margin-bottom: 30px;
     color: var(--gray-700);
 }
@@ -306,6 +361,7 @@ nav {
 .cta-buttons {
     display: flex;
     gap: 15px;
+    font-size: 1.1rem;
 }
 
 .hero-image {
@@ -317,8 +373,8 @@ nav {
 
 .profile-container {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 430px;
+    height: 430px;
     border-radius: 50%;
     overflow: hidden;
     box-shadow: var(--shadow-dark);
@@ -351,6 +407,8 @@ nav {
     background-color: var(--primary-color);
 }
 
+
+
 /* ----- About Section ----- */
 .about {
     background-color: var(--white);
@@ -369,26 +427,26 @@ nav {
     box-shadow: var(--shadow);
     height: 500px;
 
-    appear {
-        from {
-            opacity: 0;
-            scale: 0.7;
-            translate: translateX(-100px);
-        }
-
-        to {
-            opacity: 1;
-            scale: 1;
-            translate: translateX(0px);
-        }
-    }
-
-
+    opacity: 0;
+    transform: translateX(-80px);
+    transition: all 0.9s ease-in-out;
 }
 
 .about-text {
     flex: 1;
+    opacity: 0;
+    transform: translateX(80px);
+    transition: all 0.9s ease-in-out;
 }
+
+/* When .showAbout class is added */
+.about-image.showAbout,
+.about-text.showAbout {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
 
 .about-text h3 {
     font-size: 1.8rem;
@@ -730,11 +788,11 @@ footer {
 /* ----- Media Queries ----- */
 @media (max-width: 992px) {
     .hero-text h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
 
     .hero-text h2 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     .about-content,
@@ -743,8 +801,8 @@ footer {
     }
 
     .profile-container {
-        width: 250px;
-        height: 250px;
+        width: 340px;
+        height: 340px;
     }
 }
 
@@ -803,43 +861,46 @@ footer {
     .footer {
         font-size: 0.7rem;
     }
+
+    .profile-container {
+        margin-top: -25px;
+        width: 250px;
+        height: 250px;
+    }
 }
 
 @media (max-width: 576px) {
+
+
     .profile-container {
-        width: 180px;
-        height: 180px;
-
-        .profile-container {
-            width: 200px;
-            height: 200px;
-        }
+        width: 200px;
+        height: 200px;
+    }
 
 
 
-        .hero-text h1 {
-            font-size: 1.8rem;
-        }
+    .hero-text h1 {
+        font-size: 1.9rem;
+    }
 
-        .hero-text h2 {
-            font-size: 1.2rem;
-        }
+    .hero-text h2 {
+        font-size: 1.3rem;
+    }
 
-        .hero-text p {
-            font-size: .8rem;
-        }
+    .hero-text p {
+        font-size: .9rem;
+    }
 
-        .btn {
-            padding: 10px 20px;
-        }
+    .btn {
+        padding: 10px 20px;
+    }
 
-        .project-filter {
-            gap: 10px;
-        }
+    .project-filter {
+        gap: 10px;
+    }
 
-        .filter-btn {
-            padding: 6px 15px;
-            font-size: 0.9rem;
-        }
+    .filter-btn {
+        padding: 6px 15px;
+        font-size: 0.9rem;
     }
 }
