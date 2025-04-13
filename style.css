@@ -34,8 +34,8 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 70px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary-color) rgba(0, 0, 0, 0);
+    scrollbar-width: 1vw;
+    scrollbar-color: var(--primary-color) var(--white);
 }
 
 .topbtn {
@@ -77,6 +77,9 @@ body {
     line-height: 1.6;
     color: var(--gray-800);
     background-color: var(--gray-100);
+}
+
+html, body {
     overflow-x: hidden;
 }
 
@@ -244,7 +247,7 @@ nav {
     height: 3px;
     background-color: var(--gray-700);
     margin: 2px 0;
-    transition: var(--transition);
+    transition: all 0.3s ease-in-out;
 }
 
 .hamburger.active span {
@@ -265,9 +268,10 @@ nav {
 .hamburger.active span:last-child {
     transform: rotate(-45deg) translate(5px, -5px);
     background-color: var(--gray-700);
-
 }
 
+
+/* hero image floating animation */
 @keyframes appear {
     from {
         opacity: 0;
@@ -945,6 +949,14 @@ footer {
 }
 
 @media (max-width: 768px) {
+    body{
+        overflow-x: hidden;
+    }
+
+    html{
+        scrollbar-width: thin;
+        scrollbar-color: var(--primary-color) var(--white);
+    }
     .nav-links {
         position: fixed;
         font-size: 1.2rem;
@@ -958,10 +970,12 @@ footer {
         align-items: center;
         justify-content: center;
         gap: 20px;
-        transition: 0.2s ease;
+        opacity: 0.5;
+        transition: 0.4s ease-in-out;
     }
 
     .nav-links.active {
+        opacity: 1;
         right: 0;
     }
 
@@ -979,13 +993,12 @@ footer {
     }
 
     .hero-text h1 {
-        font-size: 1.6rem;
+        font-size: 2rem;
 
     }
 
-
     .hero-text h2 {
-        font-size: 1.15rem
+        font-size: 1.8rem
     }
 
     .section-title {
@@ -1119,11 +1132,14 @@ footer {
 }
 
 @media (max-width: 576px) {
-
+   
+    header .logo{
+        font-size: 1.5rem;
+    }
 
     .profile-container {
-        width: 200px;
-        height: 200px;
+        width: 210px;
+        height: 210px;
     }
 
     .hero-text h1 {
@@ -1132,10 +1148,6 @@ footer {
 
     .hero-text h2 {
         font-size: 1.25rem;
-    }
-
-    .hero-text p {
-        font-size: .8rem;
     }
 
     .btn {
