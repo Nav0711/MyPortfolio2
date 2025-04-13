@@ -981,11 +981,7 @@ footer {
 
 
     .hero-text h2 {
-        font-size: 1.2rem
-    }
-
-    .hero-text p {
-        font-size: 1rem;
+        font-size: 1.15rem
     }
 
     .section-title {
@@ -1131,11 +1127,11 @@ footer {
     }
 
     .hero-text h2 {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
     }
 
     .hero-text p {
-        font-size: .7rem;
+        font-size: .8rem;
     }
 
     .btn {
