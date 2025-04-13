@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    // Animation on scroll (simple version)
+    // Animation on scroll 
     const animateOnScroll = function () {
         const elements = document.querySelectorAll('.skill-level');
 
@@ -72,8 +72,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Run animation on scroll
     window.addEventListener('scroll', animateOnScroll);
+
 });
 
+
+// Scroll to top button functionality
 const buttontop = document.getElementById('topbtn');
 
 window.addEventListener('scroll', () => {
@@ -85,7 +88,7 @@ window.addEventListener('scroll', () => {
 });
 
 
-
+// Skills section animation effect
 const elements = document.querySelectorAll('.reveal-on-scroll');
 
 const observer = new IntersectionObserver((entries) => {
@@ -101,8 +104,12 @@ const observer = new IntersectionObserver((entries) => {
 elements.forEach(el => observer.observe(el));
 
 
+
+// About section animation effect
 const aboutImage = document.querySelector('.about-image');
-const aboutText = document.querySelector('.about-text');
+const aboutDes = document.querySelector('.about-des');
+const whoI = document.querySelector('.whoI');
+const resumBtn = document.querySelector('.resume');
 
 const obs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -114,7 +121,38 @@ const obs = new IntersectionObserver((entries) => {
     threshold: 0.3  // Adjust how early it triggers
 });
 
-if (aboutImage||aboutText)  {
+if (aboutImage || aboutDes || whoI || resumBtn)  {
     obs.observe(aboutImage);
-    obs.observe(aboutText);
+    obs.observe(aboutDes);
+    obs.observe(whoI);
+    obs.observe(resumBtn);
+}
+
+// Proejcts section animation effect
+const contactInfo = document.querySelector('.contact-info');
+const nameInfo = document.querySelector('#name');
+const emailInfo = document.querySelector('#email');
+const subjectInfo = document.querySelector('#subject');
+const messageInfo = document.querySelector('#message');
+const submitBtn = document.querySelector('.submitbtn');
+
+const obs2 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('showContact');
+        }
+    });
+}, {
+    threshold: 0.3  // Adjust how early it triggers
+});
+
+if (contactInfo || nameInfo || emailInfo || subjectInfo || messageInfo || submitBtn)  {
+    obs2.observe(contactInfo);
+
+    obs2.observe(nameInfo);
+    obs2.observe(emailInfo);
+    obs2.observe(subjectInfo);
+    obs2.observe(messageInfo);
+    obs2.observe(submitBtn);
+ 
 }
