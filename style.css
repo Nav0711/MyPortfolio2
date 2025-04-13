@@ -285,11 +285,15 @@ nav {
 
 
 @keyframes float {
-    0%   { transform: translate(0, 0); }
-    25%  { transform: translate(4px, -4px); }
-    50%  { transform: translate(4px, 4px); }
-    75%  { transform: translate(-4px, -4px); }
-    100% { transform: translate(0, 0); }
+    0%   { transform: translate(0, 0); rotate: 0deg; }
+    12.5%  { transform: translate(3px, 3px); rotate: -0.5deg; }
+    25%  { transform: translate(8px, 0px); rotate: 0.5deg; }
+    37.5%  { transform: translate(16px, 3px); rotate: -0.5deg;}
+    50%  { transform: translate(20px, 0px); rotate: 0.5deg; }
+    62.5%  { transform: translate(16px, -3px); rotate: -0.5deg; }
+    75%  { transform: translate(8px, 0px); rotate: 0.5deg; }
+    87.5%  { transform: translate(3px, -3px); rotate: -0.5deg; }
+    100% { transform: translate(0, 0); rotate: 0deg; }
   }
   
 
@@ -297,13 +301,10 @@ nav {
     width: 200px;
     animation: 
       appear 2s ease-out forwards,
-      float 6s ease-in-out infinite;
-    will-change: transform; /* helps performance */
+      float 15s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+      will-change: transform; /* helps performance */
   }
   
-
-
-
 
 @keyframes appear2 {
     from {
