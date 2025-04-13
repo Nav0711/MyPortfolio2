@@ -344,6 +344,10 @@ nav {
     height: 40em;
 }
 
+.hero .container{
+    margin: 0 10px;
+}
+
 .hero-content {
     display: flex;
     justify-content: space-between;
