@@ -105,7 +105,7 @@ elements.forEach(el => observer.observe(el));
 
 
 
-// About section animation effect
+// About section animation effect------------------------------------
 const aboutImage = document.querySelector('.about-image');
 const aboutDes = document.querySelector('.about-des');
 const whoI = document.querySelector('.whoI');
@@ -121,14 +121,35 @@ const obs = new IntersectionObserver((entries) => {
     threshold: 0.3  // Adjust how early it triggers
 });
 
-if (aboutImage || aboutDes || whoI || resumBtn)  {
+if (aboutImage || aboutDes || whoI || resumBtn) {
     obs.observe(aboutImage);
     obs.observe(aboutDes);
     obs.observe(whoI);
     obs.observe(resumBtn);
 }
 
-// Proejcts section animation effect
+
+
+
+// Projects section animation effect----------------------------------------
+const projectItems = document.querySelectorAll('.projects-grid');
+
+const obs1 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('showProjects');
+        }
+    });
+}, {
+    threshold: 0.3
+});
+
+projectItems.forEach(item => {
+    obs1.observe(item);
+});
+
+
+// contact section animation effect------------------------------------------
 const contactInfo = document.querySelector('.contact-info');
 const nameInfo = document.querySelector('#name');
 const emailInfo = document.querySelector('#email');
@@ -146,7 +167,7 @@ const obs2 = new IntersectionObserver((entries) => {
     threshold: 0.3  // Adjust how early it triggers
 });
 
-if (contactInfo || nameInfo || emailInfo || subjectInfo || messageInfo || submitBtn)  {
+if (contactInfo || nameInfo || emailInfo || subjectInfo || messageInfo || submitBtn) {
     obs2.observe(contactInfo);
 
     obs2.observe(nameInfo);
@@ -154,5 +175,5 @@ if (contactInfo || nameInfo || emailInfo || subjectInfo || messageInfo || submit
     obs2.observe(subjectInfo);
     obs2.observe(messageInfo);
     obs2.observe(submitBtn);
- 
+
 }
