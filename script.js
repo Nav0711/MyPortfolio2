@@ -177,3 +177,36 @@ if (contactInfo || nameInfo || emailInfo || subjectInfo || messageInfo || submit
     obs2.observe(submitBtn);
 
 }
+
+fetch("https://api.github.com/users/Nav0711/repos")
+    .then(response => response.json())
+    .then(repos => {
+        const list = document.getElementById('project-grid');
+        repos.forEach(repo => {
+            const item = document.createElement("div");
+
+            item.innerHTML = ` <div class="project-card" data-category="web">
+                    <div class="project-img">
+                        <img src="img" alt="Project 1">
+                    </div>
+                    <div class="project-info">
+                        <h3>Attendance Calculator</h3>
+                        <p>A fully functional attendance calculator for managing your attendance.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>    
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="${repo.html_url}" class="btn small-btn"
+                                target="_blank">Preview</a>
+                            <a href="${repo.html_url}" class="btn small-btn"
+                                target="_blank">Code</a>
+                        </div>
+                    </div>
+                </div>`;
+            list.appendChild(item);
+        });
+    })
+    .catch(error => console.error("Error fetching repos:", error));
+
