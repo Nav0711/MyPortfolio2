@@ -19,7 +19,7 @@ Welcome to the official portfolio website of **Navdeep Singh**. This website sho
 ---
 
 ## 📂 Folder Structure
-.
+```
 ├── index.html
 ├── style.css
 ├── script.js
@@ -29,7 +29,7 @@ Welcome to the official portfolio website of **Navdeep Singh**. This website sho
 │   ├── attendanceCalc.png
 │   ├── weatherapp.png
 ├── Navdeep CV.pdf
-
+```
 
 
 
